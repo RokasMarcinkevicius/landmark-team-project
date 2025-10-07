@@ -1,6 +1,5 @@
 # Sprint 1 – Landmark‑ID (Vilnius Commons) – Team Documentation [EN]
 
-> **Goal:** Ship a working on‑device landmark classifier (MVP) using a 5‑class, small dataset. This document helps teammates quickly understand and reproduce the full pipeline.
 
 ---
 
