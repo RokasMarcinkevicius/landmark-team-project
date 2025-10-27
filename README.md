@@ -1,7 +1,7 @@
 # Landmark‑ID (Vilnius Commons) – Team Documentation [EN]
 ---
 
-## 0) Task Description
+## 0) Task Description 
 
 Implement a landmark identification app.
 
