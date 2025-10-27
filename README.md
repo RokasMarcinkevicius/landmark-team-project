@@ -1,22 +1,24 @@
-# Sprint 1 – Landmark‑ID (Vilnius Commons) – Team Documentation [EN]
-
-
+# Landmark‑ID (Vilnius Commons) – Team Documentation [EN]
 ---
 
-## 1) Sprint Overview
+## 0) Task Description
 
-* **Time window:** 7–13 Oct 2025
+Implement a landmark identification app.
+
+## 1)  Overview
+* **Task start:** 7 Oct 2025
+* **Task finish deadline:** 15 November 2025
 * **MVP flow:** Camera → single frame → **TFLite (INT8)** model → **Top‑3** predictions on screen
 * **Backbone:** `MobileNetV3‑Small` (transfer learning)
 * **Stack:** Python 3.11, TensorFlow 2.16.1, Keras 3, Weights & Biases (W&B) 0.22.1
 * **Data source:** Wikimedia Commons (5 Vilnius landmarks)
 * **Classes:**
 
-  * `gediminas_tower`
-  * `vilnius_cathedral`
-  * `gate_of_dawn`
-  * `st_anne`
-  * `three_crosses`
+    * `gediminas_tower`
+    * `vilnius_cathedral`
+    * `gate_of_dawn`
+    * `st_anne`
+    * `three_crosses`
 
 **Definition of Done (Sprint 1):**
 
@@ -55,9 +57,9 @@ landmark-id/
 * **Virtual env:** `.venv`
 * **Critical pins:**
 
-  * `tensorflow==2.16.1`
-  * `protobuf<5,>=3.20.3` (e.g., 4.25.8) ← required for TF 2.16.1
-  * `wandb==0.22.1`
+    * `tensorflow==2.16.1`
+    * `protobuf<5,>=3.20.3` (e.g., 4.25.8) ← required for TF 2.16.1
+    * `wandb==0.22.1`
 
 **Install:**
 
@@ -147,8 +149,8 @@ python src/models/train_keras_wandb.py
 * Script: `src/models/eval_and_report.py`
 * Produces:
 
-  * `reports/confusion_matrix.csv`
-  * `reports/sprint1_metrics.md` (Top‑1/Top‑3 + per‑class precision/recall/F1)
+    * `reports/confusion_matrix.csv`
+    * `reports/sprint1_metrics.md` (Top‑1/Top‑3 + per‑class precision/recall/F1)
 * W&B: run charts, class‑wise metrics, confusion matrix image
 
 **Run:**
@@ -163,8 +165,8 @@ python src/models/eval_and_report.py
 
 * Outputs:
 
-  * `models/landmark_mnv3_fp32.tflite` (FP32)
-  * `models/landmark_mnv3_int8.tflite` (dynamic‑range INT8)
+    * `models/landmark_mnv3_fp32.tflite` (FP32)
+    * `models/landmark_mnv3_int8.tflite` (dynamic‑range INT8)
 * Size target: **≤ 20 MB** (INT8)
 * Runtime speed: measured on device in Sprint 2 (goal **< 150 ms**)
 
