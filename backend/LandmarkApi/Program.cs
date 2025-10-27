@@ -1,4 +1,6 @@
 using LandmarkApi.Services;
+using LandmarkApi.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +12,15 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() {
         Title = "Landmark Identification API",
         Version = "v1",
-        Description = "REST API for Vilnius landmark identification using TensorFlow Lite"
+        Description = "REST API for Vilnius landmark identification using TensorFlow Lite with PostgreSQL storage"
     });
 });
+
+// Configure PostgreSQL database
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? "Host=localhost;Database=landmark_db;Username=postgres;Password=postgres";
+builder.Services.AddDbContext<LandmarkDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 // Register prediction service as singleton (model loaded once)
 builder.Services.AddSingleton<LandmarkPredictionService>();
@@ -35,6 +43,14 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(optio
 });
 
 var app = builder.Build();
+
+// Auto-migrate database on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<LandmarkDbContext>();
+    db.Database.Migrate();
+    app.Logger.LogInformation("Database migrated successfully");
+}
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
