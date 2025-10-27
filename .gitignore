@@ -5,3 +5,23 @@ reports/*
 wandb/
 *.ipynb_checkpoints
 .env
+
+# IDE
+.idea/
+.vscode/
+
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/*.suo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Temp files
+*.tmp
+.DS_Store
