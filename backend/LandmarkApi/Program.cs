@@ -32,7 +32,8 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyOrigin()
               .AllowAnyMethod()
-              .AllowAnyHeader();
+              .AllowAnyHeader()
+              .AllowAnyOrigin();
     });
 });
 
@@ -69,5 +70,6 @@ app.MapControllers();
 
 app.Logger.LogInformation("Landmark Identification API started");
 app.Logger.LogInformation("Swagger UI available at: /swagger");
+app.Urls.Add("http://0.0.0.0:5126");
 
 app.Run();

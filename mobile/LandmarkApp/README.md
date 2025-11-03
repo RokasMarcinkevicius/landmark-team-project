@@ -31,7 +31,7 @@ Edit `src/constants/config.ts` and change the API URL to your computer's local I
 
 ```typescript
 // Find your IP: ifconfig (Mac/Linux) or ipconfig (Windows)
-export const API_BASE_URL = 'http://192.168.1.100:5126'; // Change this!
+export const API_BASE_URL = 'http://192.168.50.103:5126'; // Change this!
 ```
 
 **Important:** `localhost` won't work on a physical device. Use your computer's IP address on the same WiFi network.
