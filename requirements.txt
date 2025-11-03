@@ -1,0 +1,34 @@
+# GLD v2 Lithuanian Landmarks Dataset Ingestion & Training
+# Python 3.11+
+
+# Core deep learning
+tensorflow==2.16.1
+protobuf<5,>=3.20.3
+
+# Keras integration
+keras==3.0.0
+
+# Data processing and imaging
+pillow>=10.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Download and HTTP utilities
+requests>=2.31.0
+tqdm>=4.65.0
+
+# Dataset versioning and experiment tracking
+wandb>=0.15.0
+
+# Model evaluation and metrics
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Development tools
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+
+# Optional: GPU support (uncomment if using CUDA)
+# tensorflow-gpu==2.16.1
