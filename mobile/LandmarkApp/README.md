@@ -18,7 +18,7 @@ Mobile app for identifying Vilnius landmarks using your .NET backend API.
 
 ## Prerequisites
 
-- Node.js 18+ (currently you have 16.x which may cause issues)
+- Node.js 18+ 
 - Expo Go app installed on your phone ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
 - Backend API running (see `backend/LandmarkApi/`)
 - PostgreSQL database running
@@ -56,6 +56,9 @@ Backend will run on `http://localhost:5126`
 ### 3. Start the React Native App
 
 ```bash
+nvm install 20
+nvm use 20
+
 cd mobile/LandmarkApp
 npm start
 ```

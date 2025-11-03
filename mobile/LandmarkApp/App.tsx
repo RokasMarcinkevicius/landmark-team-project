@@ -7,7 +7,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CameraScreen from './src/screens/CameraScreen';
 import ResultsScreen from './src/screens/ResultsScreen';
 import HistoryScreen from './src/screens/HistoryScreen';
+import { enableScreens } from 'react-native-screens';
 
+enableScreens();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
